@@ -8,7 +8,7 @@ phases:
   pre_build:
     commands:
       - echo write steps for prebuild here
-      - service docker stop
+      #- service docker stop
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 807304410860.dkr.ecr.us-east-1.amazonaws.com
       - echo "$CODEBUILD_SRC_DIR/actions-runner/run-helper.sh"
