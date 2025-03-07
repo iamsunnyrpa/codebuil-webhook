@@ -3,9 +3,6 @@ phases:
   install:
     commands:
       - echo write steps for install here
-      - docker --version
-      - rc-update add docker boot
-      - dockerd &
 
 
   pre_build:
@@ -13,6 +10,7 @@ phases:
       - echo write steps for prebuild here
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 807304410860.dkr.ecr.us-east-1.amazonaws.com
+      - echo "CODEBUILD_SRC_DIR/actions-runner/run-helper.sh"
       # Type the command to log in to your Docker Hub account here.       
 
   # you can give a build phase here. using keywork Build, or it is going to execute you main yml steps in the build phase.
