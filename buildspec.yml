@@ -11,7 +11,9 @@ phases:
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 807304410860.dkr.ecr.us-east-1.amazonaws.com
       - echo "$CODEBUILD_SRC_DIR/actions-runner/run-helper.sh"
-      - cd $CODEBUILD_SRC_DIR/actions-runner
+      - cd $CODEBUILD_SRC_DIR
+      - ls -a
+      - cd actions-runner
       - ls -a
       # Type the command to log in to your Docker Hub account here.       
 
