@@ -5,8 +5,5 @@ jobs:
     runs-on:
       - codebuild-GitHub_Runner-${{ github.run_id }}-${{ github.run_attempt }}
       #replace GitHub_Runner with actual CodeBuild project.
-      - fleet:myFleet
-      - image:arm-3.0
-      - instance-size:small
     steps:
       - run: echo "Hello World!"
